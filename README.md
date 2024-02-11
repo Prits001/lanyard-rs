@@ -1,5 +1,6 @@
+
 ## This is a Rust rewrite of [Lanyard](https://github.com/Phineas/lanyard)
-## 🏷️ Expose your Discord presence and activities to a RESTful API ~~and WebSocket~~ in less than 10 seconds
+## <img src="https://github.com/Prits001/lanyard-rs/blob/3f5add219fe2d6be49bcb6f05f8d7d6a677df849/Icon.png" width="100"/> Expose your Discord presence and activities to a RESTful API ~~and WebSocket~~ in less than 10 seconds
 
 Lanyard-rust is a service that makes it easy to export your live Discord presence to an API endpoint (`lanyard.devprits.ru/v1/users/:your_id`) and ~~to a WebSocket (see below)~~(to be implemented later) for you to use wherever you want.
 You can use Lanyard-rust's API without deploying anything yourself - but if you want to self host it, you have the option to, though it'll require a tiny bit of configuration.
