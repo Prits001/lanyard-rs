@@ -104,19 +104,23 @@ Here's an example json from my account:
 __There are minor differences to original Lanyard's output that will be patched soon.__
 
 # Self-host with Docker
-Build the Docker image + create network by cloning this repo and running:
+Build the Docker image by cloning this repo and running:
 ```bash
 git clone https://github.com/Prits001/lanyard-rs
 cd lanyard-rs
-docker build -t lanyard-rust .
+docker build -t pri1s/lanyard-rust .
 ```
-Redis server required! Use this to deploy a container of it.
+OR Download from hub
+```
+docker pull pri1s/lanyard-rust:latest
+```
+Redis server required! Use this to deploy a container of it + create network with it.
 ```bash
 docker network create lanyard
-docker run -d --name lanyard-redis -v docker_mount_location_on_host:/data redis-alpine
+docker run -d --name lanyard-redis --network lanyard -v docker_mount_location_on_host:/data redis-alpine
 ```
 And run the freshly baked image
 ```
-docker run --network lanyard -d -e REDIS_LINK=redis://lanyard-redis:6379/ -e DISCORD_TOKEN=TOKEN_HERE -p 5050:5050 lanyard-rust
+docker run --network lanyard -d -e REDIS_LINK=redis://lanyard-redis:6379/ -e DISCORD_TOKEN=TOKEN_HERE -p 5050:5050 pri1s/lanyard-rust
 ```
 Make sure you have a Discord bot with **__PRESENCE INTENT and SERVER MEMBERS INTENT__** turned **on**
